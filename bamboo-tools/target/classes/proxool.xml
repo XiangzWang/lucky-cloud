@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<something-else-entirely>
+	<proxool>
+		<alias>sea</alias>
+		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
+
+		<!-- 深圳 
+		<driver-url>jdbc:oracle:thin:@202.20.30.55:1521/sea</driver-url> 
+		<driver-properties> 
+			<property name="user" value="sea"/> 
+			<property name="password" value="sea_3000"/> 
+	    </driver-properties> -->
+		    
+		<!-- 南京深圳项目 
+		<driver-url>jdbc:oracle:thin:@192.168.176.51:1521/sea1</driver-url> 
+		<driver-properties> 
+			<property name="user" value="jlzdh"/> 
+			<property name="password" value="jlzdh"/> 
+		</driver-properties> -->
+
+		<driver-url>jdbc:oracle:thin:@192.168.176.151:1521/sea</driver-url>
+		<driver-properties>
+			<property name="user" value="sea" />
+			<property name="password" value="sea3000" />
+		</driver-properties>
+
+		<maximum-connection-count>60</maximum-connection-count>
+		<simultaneous-build-throttle>60</simultaneous-build-throttle>
+		<minimum-connection-count>2</minimum-connection-count>
+		<maximum-new-count>30</maximum-new-count>
+		<prototype-count>2</prototype-count>
+		<maximum-active-time>1200000</maximum-active-time>
+		<test-before-use>true</test-before-use>
+		<house-keeping-test-sql>select CURRENT_DATE from dual</house-keeping-test-sql>
+	</proxool>
+</something-else-entirely>
+
