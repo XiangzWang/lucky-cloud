@@ -8,7 +8,7 @@ public class TestOneLevelCache {
      * 一级缓存: 也就Session级的缓存(默认开启)
      */
     @Test
-    public void testCache1() {
+    public void testCache1 () {
         SqlSession session = SqlSessionUtils.getSqlSession();
         String staffNo = "wxz";
         String statement = "org.bamboo.mybatis.PSysUserMapper.getUser";
