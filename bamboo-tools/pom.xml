@@ -12,8 +12,8 @@
 
 	<repositories>
 		<repository>
-			<id>nari-storm</id>
-			<url>${repository.url}/nexus/content/repositories/nari-storm</url>
+			<id>luck-cloud</id>
+			<url>${repository.url}/nexus/content/repositories/luck-cloud</url>
 		</repository>
 	</repositories>
 

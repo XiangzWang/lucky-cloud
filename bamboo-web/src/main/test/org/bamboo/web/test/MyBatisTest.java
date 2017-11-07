@@ -16,7 +16,7 @@ public class MyBatisTest {
      * 所有做Junit单元测试时一些初始化工作可以在这个方法里面进行
      * 比如在before方法里面初始化ApplicationContext和userService
      */
-//    @Before
+    @Before
     public void before(){
         //使用"spring.xml"和"spring-mybatis.xml"这两个配置文件创建Spring上下文
         ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-mybatis.xml"});
@@ -24,7 +24,7 @@ public class MyBatisTest {
         userService = (UserService) ac.getBean("userService");
     }
     
-//    @Test
+    @Test
     public void testAddUser(){
         //ApplicationContext ac = new ClassPathXmlApplicationContext(new String[]{"spring.xml","spring-mybatis.xml"});
         //UserServiceI userService = (UserServiceI) ac.getBean("userService");
