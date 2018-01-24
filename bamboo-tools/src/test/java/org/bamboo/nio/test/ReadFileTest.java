@@ -1,6 +1,7 @@
 package org.bamboo.nio.test;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 
@@ -14,31 +15,54 @@ import java.nio.channels.FileChannel;
  */
 public class ReadFileTest {
     static public void main( String args[] ) throws Exception {
-        FileInputStream fin = new FileInputStream("e:\\test.txt");
+        long start = System.currentTimeMillis();
+        FileInputStream fin = new FileInputStream("E:\\swz.mp4");
+        FileOutputStream fout = new FileOutputStream("e:\\swz2.mp4");
+
 
         // 获取通道
         FileChannel fc = fin.getChannel();
 
+        FileChannel foc = fout.getChannel();
+
         // 创建缓冲区
-        ByteBuffer buffer = ByteBuffer.allocate(1024);
+        ByteBuffer buffer = ByteBuffer.allocate(50 * 1024 * 1024);
 
         // 读取数据到缓冲区
-        fc.read(buffer);
+        int bytesRead = fc.read(buffer);
 
-        buffer.flip();
+       /* while(bytesRead != -1) {
+            buffer.flip();
+            while(buffer.hasRemaining()) {
+                byte b = buffer.get();
+                System.out.print((char)b);
+            }
+            buffer.compact();
+            bytesRead = fc.read(buffer);
+        }*/
 
-        /*while (buffer.remaining() > 0) {
+        /*buffer.flip();
+        while (buffer.remaining() > 0) {
             byte b = buffer.get();
             System.out.print(((char)b));
         }*/
 
-        while (buffer.remaining() > 0) {
-            byte[] bs = new byte[1024];
-            buffer.get(bs, 0, buffer.remaining());
+        while(bytesRead != -1) {
+            buffer.flip();
+            while (buffer.remaining() > 0) {
+                foc.write(buffer);
 
-            System.out.print(new String(bs, "UTF-8"));
+//                byte[] bs = new byte[buffer.remaining()];
+//                buffer.get(bs, 0, buffer.remaining());
+//                System.out.println(new String(bs, "UTF-8"));
+            }
+            buffer.compact();
+            bytesRead = fc.read(buffer);
         }
 
         fin.close();
+
+        System.out.println();
+        System.out.println(System.currentTimeMillis() - start);
     }
 }
