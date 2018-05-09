@@ -34,7 +34,7 @@ public class ProxoolUtils implements Serializable {
 	}
 
 	private ProxoolUtils() {
-		inited = false;
+		inited = createCon();
 	}
 
 	public static ProxoolUtils getInstance() {
@@ -68,7 +68,7 @@ public class ProxoolUtils implements Serializable {
 		return inited;
 	}
 
-	public synchronized boolean createCon() {
+	private boolean createCon() {
 		try {
 			String path = ConfigUtils.getProperty("proxool-url");
 //			JAXPConfigurator.configure(path, false); // E:\\storm-conf\\proxool.xml

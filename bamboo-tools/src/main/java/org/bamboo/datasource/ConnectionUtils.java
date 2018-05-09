@@ -21,10 +21,13 @@ public class ConnectionUtils {
 		if (dbconn == null) {
 			dbconn = ProxoolUtils.getInstance();
 		}
-		if (!(dbconn.createCon())) {
-			log.error("数据库连接失败");
-		}
+
 		Connection conn = dbconn.getConnection();
+		try {
+			conn.setAutoCommit(false);
+		} catch (SQLException e) {
+			log.error("数据库连接失败", e);
+		}
 		return conn;
 	}
 
@@ -34,13 +37,14 @@ public class ConnectionUtils {
 	 * @return
 	 */
 	public static Connection getConnectionJDBC() {
-		String username = "sea";
-		String pwd = "sea3000";
-		String url = "jdbc:oracle:thin:@192.168.176.51:1521/sea";
+		String username = "root";
+		String pwd = "123";
+		String url = "jdbc:mysql://localhost:3306/sea";
 		Connection conn = null;
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("com.mysql.jdbc.Driver");
 			conn = DriverManager.getConnection(url, username, pwd);
+			conn.setAutoCommit(false);
 		} catch (SQLException e) {
 			log.error("数据库连接失败", e);
 		} catch (ClassNotFoundException e1) {

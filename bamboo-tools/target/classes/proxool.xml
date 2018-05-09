@@ -24,7 +24,13 @@
 			<property name="password" value="sea3000" />
 		</driver-properties>
 
-		<maximum-connection-count>60</maximum-connection-count>
+		<!--<driver-url>jdbc:mysql://localhost:3306/sea</driver-url>
+		<driver-properties>
+			<property name="user" value="root" />
+			<property name="password" value="123" />
+		</driver-properties>-->
+
+		<maximum-connection-count>160</maximum-connection-count>
 		<simultaneous-build-throttle>60</simultaneous-build-throttle>
 		<minimum-connection-count>2</minimum-connection-count>
 		<maximum-new-count>30</maximum-new-count>
