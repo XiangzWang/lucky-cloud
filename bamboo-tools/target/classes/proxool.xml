@@ -2,33 +2,11 @@
 <something-else-entirely>
 	<proxool>
 		<alias>sea</alias>
-		<driver-class>oracle.jdbc.driver.OracleDriver</driver-class>
-
-		<!-- 深圳 
-		<driver-url>jdbc:oracle:thin:@202.20.30.55:1521/sea</driver-url> 
-		<driver-properties> 
-			<property name="user" value="sea"/> 
-			<property name="password" value="sea_3000"/> 
-	    </driver-properties> -->
-		    
-		<!-- 南京深圳项目 
-		<driver-url>jdbc:oracle:thin:@192.168.176.51:1521/sea1</driver-url> 
-		<driver-properties> 
-			<property name="user" value="jlzdh"/> 
-			<property name="password" value="jlzdh"/> 
-		</driver-properties> -->
-
-		<driver-url>jdbc:oracle:thin:@192.168.176.151:1521/sea</driver-url>
-		<driver-properties>
-			<property name="user" value="sea" />
-			<property name="password" value="sea3000" />
-		</driver-properties>
-
-		<!--<driver-url>jdbc:mysql://localhost:3306/sea</driver-url>
+		<driver-url>jdbc:mysql://localhost:3306/sea</driver-url>
 		<driver-properties>
 			<property name="user" value="root" />
 			<property name="password" value="123" />
-		</driver-properties>-->
+		</driver-properties>
 
 		<maximum-connection-count>160</maximum-connection-count>
 		<simultaneous-build-throttle>60</simultaneous-build-throttle>
