@@ -12,7 +12,7 @@ public interface PUserMapper {
 
 	int insertSelective(PUser record);
 
-	PUser selectByPrimaryKey(String userId);
+	PUser selectByPrimaryKey(Integer userId);
 
 	int updateByPrimaryKeySelective(PUser record);
 

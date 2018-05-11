@@ -1,33 +1,39 @@
 package org.bamboo.web.domain;
 
 public class PUser {
-    private Integer id;
+	private Integer id;
 
-    private String name;
+	private String name;
 
-    private String sex;
+	private String sex;
 
-    public Integer getId() {
-        return id;
-    }
+	public Integer getId() {
+		return id;
+	}
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
-    public String getName() {
-        return name;
-    }
+	public String getName() {
+		return name;
+	}
 
-    public void setName(String name) {
-        this.name = name == null ? null : name.trim();
-    }
+	public void setName(String name) {
+		this.name = name == null ? null : name.trim();
+	}
 
-    public String getSex() {
-        return sex;
-    }
+	public String getSex() {
+		return sex;
+	}
 
-    public void setSex(String sex) {
-        this.sex = sex == null ? null : sex.trim();
-    }
+	public void setSex(String sex) {
+		this.sex = sex == null ? null : sex.trim();
+	}
+
+	@Override
+	public String toString() {
+		return "PUser [id=" + id + ", name=" + name + ", sex=" + sex + "]";
+	}
+
 }
